@@ -1,0 +1,32 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: blp-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: auth-svc
+          uri: lb://blp-auth
+          predicates:
+            - Path=/auth/**
+        - id: user-svc
+          uri: lb://blp-user
+          predicates:
+            - Path=/user/**
+        - id: product-svc
+          uri: lb://blp-product
+          predicates:
+            - Path=/product/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
