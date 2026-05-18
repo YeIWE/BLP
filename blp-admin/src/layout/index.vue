@@ -5,7 +5,7 @@
         <span v-if="!isCollapse">BLP Admin</span>
         <span v-else>BLP</span>
       </div>
-      <el-menu :default-active="route.path" :collapse="isCollapse" background-color="transparent" text-color="var(--sidebar-text)" active-text-color="#fff" router>
+      <el-menu :default-active="route.path" :collapse="isCollapse" background-color="transparent" text-color="var(--sidebar-text)" active-text-color="#fff" @select="handleMenuSelect">
         <template v-for="item in menuList" :key="item.id">
           <el-sub-menu v-if="item.type===0&&item.children?.length" :index="item.path||String(item.id)">
             <template #title><el-icon><component :is="item.icon" /></el-icon><span>{{ item.name }}</span></template>
@@ -56,12 +56,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useAuthStore } from '@/stores/auth'
 import { useThemeStore } from '@/stores/theme'
 
 const route = useRoute()
+const router = useRouter()
 const { locale } = useI18n()
 const authStore = useAuthStore()
 const themeStore = useThemeStore()
@@ -69,6 +70,10 @@ const isCollapse = ref(false)
 
 const menuList = authStore.menus as any[]
 const themeColors: Record<string, string> = { blue: '#1890FF', yellow: '#F5A623', pink: '#EB2F96', green: '#52C41A', purple: '#722ED1' }
+
+function handleMenuSelect(index: string) {
+  if (index && index.startsWith('/')) router.push(index)
+}
 
 function switchLang(lang: string) { locale.value = lang; localStorage.setItem('lang', lang) }
 function handleCmd(cmd: string) { if (cmd === 'logout') authStore.logout() }

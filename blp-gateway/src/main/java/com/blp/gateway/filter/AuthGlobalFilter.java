@@ -20,6 +20,10 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
     private static final Set<String> ALLOWED_PATHS = Set.of(
         "/auth/login",
         "/auth/oauth2/jwks",
+        "/product/",
+        "/review/",
+        "/search/",
+        "/promotion/seckill/list",
         "/v3/api-docs",
         "/swagger-ui",
         "/doc.html",
