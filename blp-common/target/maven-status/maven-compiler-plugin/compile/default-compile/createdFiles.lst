@@ -1,0 +1,4 @@
+com\blp\common\result\ApiResult.class
+com\blp\common\result\PageResult.class
+com\blp\common\exception\BizException.class
+com\blp\common\constant\AuthConstant.class
