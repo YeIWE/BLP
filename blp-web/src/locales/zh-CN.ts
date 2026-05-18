@@ -1,0 +1,20 @@
+export default {
+  common: { search: '搜索', create: '新增', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', confirm: '确定', actions: '操作', status: '状态', enabled: '启用', disabled: '禁用', yes: '是', no: '否' },
+  login: { title: 'BLP 电商管理后台', username: '用户名', password: '密码', btn: '登 录', success: '登录成功', error: '用户名或密码错误' },
+  menu: { home: '首页', sys: '系统管理', user: '用户管理', role: '角色管理', menuMgr: '菜单管理', product: '商品管理', productList: '商品列表', category: '分类管理', brand: '品牌管理' },
+  user: { username: '用户名', nickname: '昵称', email: '邮箱', phone: '手机号', createTime: '创建时间', password: '密码' },
+  role: { name: '角色名称', code: '角色编码', description: '描述' },
+  menuMgr: { name: '菜单名称', path: '路由路径', component: '组件路径', icon: '图标', type: '类型', permission: '权限标识', sort: '排序', dir: '目录', menu: '菜单', button: '按钮' },
+  product: { name: '商品名称', price: '价格', stock: '库存', categoryId: '所属分类', brandId: '品牌', mainImage: '主图', description: '描述', upload: '上传图片' },
+  category: { name: '分类名称', parentId: '上级分类', level: '层级', icon: '图标', root: '根分类' },
+  brand: { name: '品牌名称', logo: 'Logo', description: '描述', uploadLogo: '上传Logo' },
+  theme: { blue: '蓝白组', yellow: '黄白组', pink: '粉白组', green: '绿白组', purple: '紫白组', title: '主题切换' },
+  navbar: { logout: '退出登录', lang: '语言', theme: '主题', profile: '个人中心' },
+  dashboard: { title: '控制台', welcome: '欢迎使用 BLP 电商管理后台', stats: '数据统计', users: '用户总数', products: '商品总数', orders: '订单总数' },
+  web: {
+    home: '首页', search: '搜索商品', searchPlaceholder: '输入商品名称搜索...',
+    categories: '商品分类', hotProducts: '热门推荐', price: '价格',
+    detail: '商品详情', stock: '库存', addToCart: '加入购物车', unit: '件',
+    all: '全部',
+  },
+}

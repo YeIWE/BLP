@@ -1,0 +1,20 @@
+export default {
+  common: { search: '検索', create: '新規', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', confirm: '確認', actions: '操作', status: '状態', enabled: '有効', disabled: '無効', yes: 'はい', no: 'いいえ' },
+  login: { title: 'BLP EC管理画面', username: 'ユーザー名', password: 'パスワード', btn: 'ログイン', success: 'ログイン成功', error: 'ユーザー名またはパスワードが間違っています' },
+  menu: { home: 'ホーム', sys: 'システム管理', user: 'ユーザー管理', role: 'ロール管理', menuMgr: 'メニュー管理', product: '商品管理', productList: '商品一覧', category: 'カテゴリ管理', brand: 'ブランド管理' },
+  user: { username: 'ユーザー名', nickname: 'ニックネーム', email: 'メール', phone: '電話番号', createTime: '作成日時', password: 'パスワード' },
+  role: { name: 'ロール名', code: 'ロールコード', description: '説明' },
+  menuMgr: { name: 'メニュー名', path: 'パス', component: 'コンポーネント', icon: 'アイコン', type: 'タイプ', permission: '権限', sort: '並び順', dir: 'ディレクトリ', menu: 'メニュー', button: 'ボタン' },
+  product: { name: '商品名', price: '価格', stock: '在庫', categoryId: 'カテゴリ', brandId: 'ブランド', mainImage: 'メイン画像', description: '説明', upload: 'アップロード' },
+  category: { name: 'カテゴリ名', parentId: '親カテゴリ', level: 'レベル', icon: 'アイコン', root: 'ルート' },
+  brand: { name: 'ブランド名', logo: 'ロゴ', description: '説明', uploadLogo: 'ロゴアップロード' },
+  theme: { blue: 'ブルー', yellow: 'イエロー', pink: 'ピンク', green: 'グリーン', purple: 'パープル', title: 'テーマ' },
+  navbar: { logout: 'ログアウト', lang: '言語', theme: 'テーマ', profile: 'プロフィール' },
+  dashboard: { title: 'ダッシュボード', welcome: 'BLP管理画面へようこそ', stats: '統計', users: '総ユーザー数', products: '総商品数', orders: '総注文数' },
+  web: {
+    home: 'ホーム', search: '商品検索', searchPlaceholder: '商品名で検索...',
+    categories: 'カテゴリ', hotProducts: 'おすすめ', price: '価格',
+    detail: '商品詳細', stock: '在庫', addToCart: 'カートに入れる', unit: '個',
+    all: 'すべて',
+  },
+}

@@ -1,0 +1,20 @@
+export default {
+  common: { search: 'Search', create: 'Create', edit: 'Edit', delete: 'Delete', save: 'Save', cancel: 'Cancel', confirm: 'Confirm', actions: 'Actions', status: 'Status', enabled: 'Enabled', disabled: 'Disabled', yes: 'Yes', no: 'No' },
+  login: { title: 'BLP E-Commerce Admin', username: 'Username', password: 'Password', btn: 'Login', success: 'Login successful', error: 'Invalid username or password' },
+  menu: { home: 'Home', sys: 'System', user: 'Users', role: 'Roles', menuMgr: 'Menus', product: 'Products', productList: 'Products', category: 'Categories', brand: 'Brands' },
+  user: { username: 'Username', nickname: 'Nickname', email: 'Email', phone: 'Phone', createTime: 'Created', password: 'Password' },
+  role: { name: 'Name', code: 'Code', description: 'Description' },
+  menuMgr: { name: 'Name', path: 'Path', component: 'Component', icon: 'Icon', type: 'Type', permission: 'Permission', sort: 'Sort', dir: 'Directory', menu: 'Menu', button: 'Button' },
+  product: { name: 'Name', price: 'Price', stock: 'Stock', categoryId: 'Category', brandId: 'Brand', mainImage: 'Main Image', description: 'Description', upload: 'Upload' },
+  category: { name: 'Name', parentId: 'Parent', level: 'Level', icon: 'Icon', root: 'Root' },
+  brand: { name: 'Name', logo: 'Logo', description: 'Description', uploadLogo: 'Upload Logo' },
+  theme: { blue: 'Blue', yellow: 'Yellow', pink: 'Pink', green: 'Green', purple: 'Purple', title: 'Theme' },
+  navbar: { logout: 'Logout', lang: 'Language', theme: 'Theme', profile: 'Profile' },
+  dashboard: { title: 'Dashboard', welcome: 'Welcome to BLP Admin', stats: 'Statistics', users: 'Total Users', products: 'Total Products', orders: 'Total Orders' },
+  web: {
+    home: 'Home', search: 'Search', searchPlaceholder: 'Search products...',
+    categories: 'Categories', hotProducts: 'Hot Products', price: 'Price',
+    detail: 'Product Detail', stock: 'Stock', addToCart: 'Add to Cart', unit: 'pcs',
+    all: 'All',
+  },
+}
