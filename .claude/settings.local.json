@@ -60,7 +60,17 @@
       "Bash(curl -s -w \"\\\\nHTTP_CODE:%{http_code}\" http://localhost:9000/minio/health/live)",
       "Bash(MSYS_NO_PATHCONV=1 docker exec kafka-server *)",
       "Bash(mvn spring-boot:run -q)",
-      "Bash(curl -s -X POST \"http://localhost:9001/auth/oauth2/token\" -u \"blp-admin:blp-secret\" -d \"grant_type=password&username=admin&password=admin123&scope=all\")"
+      "Bash(curl -s -X POST \"http://localhost:9001/auth/oauth2/token\" -u \"blp-admin:blp-secret\" -d \"grant_type=password&username=admin&password=admin123&scope=all\")",
+      "Bash(pkill -f \"blp-auth\")",
+      "Bash(curl -s -X POST \"http://localhost:9001/auth/login\" -H \"Content-Type: application/json\" -d '{\"username\":\"admin\",\"password\":\"admin123\"}')",
+      "Bash(python -m json.tool)",
+      "Bash(curl -s -X POST \"http://localhost:18001/auth/login\" -H \"Content-Type: application/json\" -d '{\"username\":\"admin\",\"password\":\"admin123\"}')",
+      "Bash(curl *)",
+      "Bash(MSYS_NO_PATHCONV=1 docker exec nacos-server *)",
+      "Bash(mvn spring-boot:run -Dspring-boot.run.arguments=\"--logging.level.org.springframework.security=TRACE\" -q)",
+      "Bash(mvn spring-boot:run)",
+      "Bash(taskkill //F //IM java.exe)",
+      "Bash(netstat -ano)"
     ]
   }
 }

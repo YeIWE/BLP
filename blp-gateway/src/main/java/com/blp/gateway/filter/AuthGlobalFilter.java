@@ -14,8 +14,8 @@ import java.util.Set;
 public class AuthGlobalFilter implements GlobalFilter, Ordered {
 
     private static final Set<String> ALLOWED_PATHS = Set.of(
-        "/auth/oauth2/token",
-        "/auth/oauth2/authorize",
+        "/auth/login",
+        "/auth/oauth2/jwks",
         "/v3/api-docs",
         "/swagger-ui",
         "/doc.html",

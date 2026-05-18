@@ -1,17 +1,18 @@
 server:
-  port: 9001
+  port: 18080
 
 spring:
   application:
     name: blp-auth
   datasource:
-    url: jdbc:mysql://localhost:3307/blp_db?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3307/blp_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
       discovery:
+        enabled: false
         server-addr: localhost:8848
 
 mybatis-plus:

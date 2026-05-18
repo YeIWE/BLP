@@ -14,6 +14,6 @@ export default defineConfig({
   resolve: { alias: { '@': resolve(__dirname, 'src') } },
   server: {
     port: 9527,
-    proxy: { '/api': { target: 'http://localhost:9000', changeOrigin: true, rewrite: (p) => p.replace(/^\/api/, '') } },
+    proxy: { '/api': { target: 'http://localhost:18000', changeOrigin: true, rewrite: (p) => p.replace(/^\/api/, '') } },
   },
 })

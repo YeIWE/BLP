@@ -5,7 +5,7 @@ spring:
   application:
     name: blp-user
   datasource:
-    url: jdbc:mysql://localhost:3307/blp_db?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3307/blp_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,6 +13,8 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+        username: nacos
+        password: nacos
 
 mybatis-plus:
   configuration:
