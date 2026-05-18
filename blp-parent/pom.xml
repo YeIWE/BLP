@@ -31,7 +31,7 @@
     <!-- TODO: uncomment as modules are created -->
     <module>../blp-gateway</module>
     <module>../blp-auth</module>
-    <!-- <module>../blp-user</module> -->
+    <module>../blp-user</module>
     <!-- <module>../blp-product</module> -->
   </modules>
 
