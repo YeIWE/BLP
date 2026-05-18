@@ -70,6 +70,22 @@ elasticsearch:
   security: disabled (dev mode)
   heap: 512MB
 
+logstash:
+  container: logstash-server
+  host: localhost
+  api-port: 9600
+  beats-port: 5044
+  tcp-port: 5000
+  config: BLP/reso/logstash/config/logstash.yml
+  pipeline: BLP/reso/logstash/pipeline/logstash.conf
+
+kibana:
+  container: kibana-server
+  host: localhost
+  port: 5601
+  console: http://localhost:5601
+  elasticsearch: http://es-server:9200
+
 # === 文档数据库 ===
 mongodb:
   container: mongo-server

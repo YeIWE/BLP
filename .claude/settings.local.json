@@ -70,7 +70,10 @@
       "Bash(mvn spring-boot:run -Dspring-boot.run.arguments=\"--logging.level.org.springframework.security=TRACE\" -q)",
       "Bash(mvn spring-boot:run)",
       "Bash(taskkill //F //IM java.exe)",
-      "Bash(netstat -ano)"
+      "Bash(netstat -ano)",
+      "Skill(gstack)",
+      "Bash(docker rm *)",
+      "Bash(git ci -m 'fix: disable Nacos auth, re-enable service discovery *)"
     ]
   }
 }
