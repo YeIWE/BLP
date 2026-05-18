@@ -38,6 +38,11 @@
     <module>../blp-payment</module>
     <module>../blp-inventory</module>
     <module>../blp-file</module>
+    <module>../blp-promotion</module>
+    <module>../blp-review</module>
+    <module>../blp-search</module>
+    <module>../blp-log</module>
+    <module>../blp-dashboard</module>
   </modules>
 
   <dependencyManagement>
