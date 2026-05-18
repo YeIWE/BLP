@@ -1,0 +1,78 @@
+# BLP Middleware Configuration
+# Generated: 2026-05-18
+# All containers running on Docker Desktop
+
+mysql:
+  container: mysql-server
+  host: localhost
+  port: 3307          # host port mapped to container 3306
+  username: root
+  password: root
+  database: blp_db
+
+redis:
+  container: redis-server
+  host: localhost
+  port: 6379
+  password: redis      # --requirepass redis
+
+nacos:
+  container: nacos-server
+  host: localhost
+  port: 8848          # HTTP API
+  grpc-port: 9848     # gRPC (internal)
+  console: http://localhost:8848/nacos
+  username: nacos
+  password: nacos
+
+sentinel:
+  container: not-running
+  host: localhost
+  port: 8719
+
+minio:
+  container: minio-server
+  host: localhost
+  api-port: 9000      # S3 API (was configured as 9001 in code!)
+  console-port: 9001  # Web Console
+  console: http://localhost:9001
+  access-key: minioadmin
+  secret-key: minioadmin
+  bucket: blp-product
+
+rabbitmq:
+  container: rabbitmq-server
+  host: localhost
+  amqp-port: 5672
+  console-port: 15672
+  console: http://localhost:15672
+  username: rabbitmq
+  password: rabbitmq
+
+kafka:
+  container: kafka-server
+  host: localhost
+  port: 9092
+  mode: KRaft (no ZooKeeper)
+
+elasticsearch:
+  container: es-server
+  host: localhost
+  http-port: 9200
+  transport-port: 9300
+  security: disabled (dev mode)
+  heap: 512MB
+
+mongodb:
+  container: mongo-server
+  host: localhost
+  port: 27017
+
+nginx:
+  container: nginx-server
+  host: localhost
+  port: 8080          # host port mapped to container 80
+
+gateway:
+  host: localhost
+  port: 9000          # Spring Cloud Gateway (not in Docker)

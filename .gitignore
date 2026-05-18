@@ -5,3 +5,7 @@
 .env
 .github_token
 *.log
+RESO/
+!RESO/middleware-config.yml
+nacos/
+nacos-server-*.zip
