@@ -10,5 +10,7 @@ export default {
   brand: { name: '品牌名称', logo: 'Logo', description: '描述', uploadLogo: '上传Logo' },
   theme: { blue: '蓝白组', yellow: '黄白组', pink: '粉白组', green: '绿白组', purple: '紫白组', title: '主题切换' },
   navbar: { logout: '退出登录', lang: '语言', theme: '主题', profile: '个人中心' },
-  dashboard: { title: '控制台', welcome: '欢迎使用 BLP 电商管理后台', stats: '数据统计', users: '用户总数', products: '商品总数', orders: '订单总数' },
+  dashboard: { title: '控制台', welcome: '欢迎使用 BLP 电商管理后台', stats: '数据统计', users: '用户总数', products: '商品总数', orders: '订单总数', todayOrders: '今日订单', todayRevenue: '今日营收', totalProducts: '商品总数', totalUsers: '用户总数' },
+  order: { orderNo: '订单号', totalAmount: '订单金额', status: '状态', receiverName: '收货人', receiverPhone: '收货电话', receiverAddress: '收货地址', detail: '订单详情', ship: '发货', deliver: '完成', createTime: '创建时间', paymentTime: '支付时间', username: '用户名', items: '订单商品', quantity: '数量', subtotal: '小计', confirmStatus: '确认更改状态', PENDING: '待支付', PAID: '已支付', SHIPPED: '已发货', DELIVERED: '已完成', CANCELLED: '已取消' },
+  seckill: { title: '秒杀管理', productId: '商品ID', seckillPrice: '秒杀价', stock: '库存', startTime: '开始时间', endTime: '结束时间' },
 }

@@ -10,5 +10,7 @@ export default {
   brand: { name: '브랜드명', logo: '로고', description: '설명', uploadLogo: '로고 업로드' },
   theme: { blue: '블루', yellow: '옐로우', pink: '핑크', green: '그린', purple: '퍼플', title: '테마' },
   navbar: { logout: '로그아웃', lang: '언어', theme: '테마', profile: '프로필' },
-  dashboard: { title: '대시보드', welcome: 'BLP 관리자에 오신 것을 환영합니다', stats: '통계', users: '총 사용자', products: '총 상품', orders: '총 주문' },
+  dashboard: { title: '대시보드', welcome: 'BLP 관리자에 오신 것을 환영합니다', stats: '통계', users: '총 사용자', products: '총 상품', orders: '총 주문', todayOrders: '오늘 주문', todayRevenue: '오늘 매출', totalProducts: '총 상품', totalUsers: '총 사용자' },
+  order: { orderNo: '주문번호', totalAmount: '금액', status: '상태', receiverName: '수령인', receiverPhone: '전화', receiverAddress: '주소', detail: '주문 상세', ship: '배송', deliver: '완료', createTime: '생성일', paymentTime: '결제일', username: '사용자', items: '주문 상품', quantity: '수량', subtotal: '소계', confirmStatus: '상태 변경 확인', PENDING: '미결제', PAID: '결제완료', SHIPPED: '배송중', DELIVERED: '배송완료', CANCELLED: '취소' },
+  seckill: { title: '타임세일', productId: '상품ID', seckillPrice: '세일가', stock: '재고', startTime: '시작시간', endTime: '종료시간' },
 }

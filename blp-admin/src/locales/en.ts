@@ -10,5 +10,7 @@ export default {
   brand: { name: 'Name', logo: 'Logo', description: 'Description', uploadLogo: 'Upload Logo' },
   theme: { blue: 'Blue', yellow: 'Yellow', pink: 'Pink', green: 'Green', purple: 'Purple', title: 'Theme' },
   navbar: { logout: 'Logout', lang: 'Language', theme: 'Theme', profile: 'Profile' },
-  dashboard: { title: 'Dashboard', welcome: 'Welcome to BLP Admin', stats: 'Statistics', users: 'Total Users', products: 'Total Products', orders: 'Total Orders' },
+  dashboard: { title: 'Dashboard', welcome: 'Welcome to BLP Admin', stats: 'Statistics', users: 'Total Users', products: 'Total Products', orders: 'Total Orders', todayOrders: 'Today Orders', todayRevenue: 'Today Revenue', totalProducts: 'Total Products', totalUsers: 'Total Users' },
+  order: { orderNo: 'Order No', totalAmount: 'Amount', status: 'Status', receiverName: 'Receiver', receiverPhone: 'Phone', receiverAddress: 'Address', detail: 'Order Detail', ship: 'Ship', deliver: 'Deliver', createTime: 'Created', paymentTime: 'Paid At', username: 'Username', items: 'Order Items', quantity: 'Qty', subtotal: 'Subtotal', confirmStatus: 'Confirm status change', PENDING: 'Pending', PAID: 'Paid', SHIPPED: 'Shipped', DELIVERED: 'Delivered', CANCELLED: 'Cancelled' },
+  seckill: { title: 'Seckill', productId: 'Product ID', seckillPrice: 'Seckill Price', stock: 'Stock', startTime: 'Start Time', endTime: 'End Time' },
 }

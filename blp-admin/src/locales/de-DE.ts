@@ -10,5 +10,7 @@ export default {
   brand: { name: 'Name', logo: 'Logo', description: 'Beschreibung', uploadLogo: 'Logo hochladen' },
   theme: { blue: 'Blau', yellow: 'Gelb', pink: 'Pink', green: 'Grün', purple: 'Lila', title: 'Design' },
   navbar: { logout: 'Abmelden', lang: 'Sprache', theme: 'Design', profile: 'Profil' },
-  dashboard: { title: 'Dashboard', welcome: 'Willkommen bei BLP Admin', stats: 'Statistiken', users: 'Benutzer', products: 'Produkte', orders: 'Bestellungen' },
+  dashboard: { title: 'Dashboard', welcome: 'Willkommen bei BLP Admin', stats: 'Statistiken', users: 'Benutzer', products: 'Produkte', orders: 'Bestellungen', todayOrders: 'Bestellungen heute', todayRevenue: 'Umsatz heute', totalProducts: 'Produkte gesamt', totalUsers: 'Benutzer gesamt' },
+  order: { orderNo: 'Bestell-Nr.', totalAmount: 'Betrag', status: 'Status', receiverName: 'Empfaenger', receiverPhone: 'Telefon', receiverAddress: 'Adresse', detail: 'Bestelldetails', ship: 'Versenden', deliver: 'Zustellen', createTime: 'Erstellt', paymentTime: 'Bezahlt am', username: 'Benutzername', items: 'Artikel', quantity: 'Menge', subtotal: 'Zwischensumme', confirmStatus: 'Statusaenderung bestaetigen', PENDING: 'Ausstehend', PAID: 'Bezahlt', SHIPPED: 'Versendet', DELIVERED: 'Zugestellt', CANCELLED: 'Storniert' },
+  seckill: { title: 'Blitzangebot', productId: 'Produkt-ID', seckillPrice: 'Angebotspreis', stock: 'Bestand', startTime: 'Startzeit', endTime: 'Endzeit' },
 }

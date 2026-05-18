@@ -10,5 +10,7 @@ export default {
   brand: { name: 'ブランド名', logo: 'ロゴ', description: '説明', uploadLogo: 'ロゴアップロード' },
   theme: { blue: 'ブルー', yellow: 'イエロー', pink: 'ピンク', green: 'グリーン', purple: 'パープル', title: 'テーマ' },
   navbar: { logout: 'ログアウト', lang: '言語', theme: 'テーマ', profile: 'プロフィール' },
-  dashboard: { title: 'ダッシュボード', welcome: 'BLP管理画面へようこそ', stats: '統計', users: '総ユーザー数', products: '総商品数', orders: '総注文数' },
+  dashboard: { title: 'ダッシュボード', welcome: 'BLP管理画面へようこそ', stats: '統計', users: '総ユーザー数', products: '総商品数', orders: '総注文数', todayOrders: '本日の注文', todayRevenue: '本日の売上', totalProducts: '総商品数', totalUsers: '総ユーザー数' },
+  order: { orderNo: '注文番号', totalAmount: '金額', status: '状態', receiverName: '受取人', receiverPhone: '電話', receiverAddress: '住所', detail: '注文詳細', ship: '出荷', deliver: '配達完了', createTime: '作成日時', paymentTime: '支払日時', username: 'ユーザー名', items: '注文商品', quantity: '数量', subtotal: '小計', confirmStatus: 'ステータス変更確認', PENDING: '未払い', PAID: '支払済', SHIPPED: '出荷済', DELIVERED: '配達済', CANCELLED: 'キャンセル' },
+  seckill: { title: 'タイムセール', productId: '商品ID', seckillPrice: 'セール価格', stock: '在庫', startTime: '開始時間', endTime: '終了時間' },
 }
