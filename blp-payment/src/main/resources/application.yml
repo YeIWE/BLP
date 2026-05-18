@@ -1,0 +1,27 @@
+server:
+  port: 9006
+
+spring:
+  application:
+    name: blp-payment
+  datasource:
+    url: jdbc:mysql://localhost:3307/blp_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+knife4j:
+  enable: true

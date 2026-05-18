@@ -33,6 +33,11 @@
     <module>../blp-auth</module>
     <module>../blp-user</module>
     <module>../blp-product</module>
+    <module>../blp-cart</module>
+    <module>../blp-order</module>
+    <module>../blp-payment</module>
+    <module>../blp-inventory</module>
+    <module>../blp-file</module>
   </modules>
 
   <dependencyManagement>
