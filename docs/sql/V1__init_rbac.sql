@@ -99,7 +99,7 @@ CREATE TABLE pms_product (
 -- 初始化数据
 -- BCrypt 密码: admin123
 INSERT INTO sys_user (username, password, nickname) VALUES
-('admin', '$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW', '超级管理员');
+('admin', '$2b$10$7sQWO/2kcqhcgwkWmU7aLe1opboaTUmyGrw3LT6JM18jSNpsJOwZG', '超级管理员');
 
 INSERT INTO sys_role (name, code, description) VALUES
 ('超级管理员', 'ADMIN', '系统最高权限'),

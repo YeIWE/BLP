@@ -73,7 +73,18 @@
       "Bash(netstat -ano)",
       "Skill(gstack)",
       "Bash(docker rm *)",
-      "Bash(git ci -m 'fix: disable Nacos auth, re-enable service discovery *)"
+      "Bash(git ci -m 'fix: disable Nacos auth, re-enable service discovery *)",
+      "Bash(mvn compile *)",
+      "Bash(nslookup github.com)",
+      "Bash(mvn dependency:tree -q)",
+      "Bash(mvn dependency:tree -Dincludes=org.springframework.boot)",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Bash(rm -rf target/)",
+      "Bash(node -e \"const b=require\\('bcryptjs'\\); console.log\\(b.hashSync\\('admin123', b.genSaltSync\\(10\\)\\)\\)\")",
+      "Bash(sed -i 's|$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW|$2b$10$7sQWO/2kcqhcgwkWmU7aLe1opboaTUmyGrw3LT6JM18jSNpsJOwZG|g' docs/sql/V1__init_rbac.sql)",
+      "Bash(rm -f src/main/java/com/blp/auth/controller/HealthController.java)",
+      "Bash(rm -f /tmp/GenHash.java)"
     ]
   }
 }
