@@ -23,9 +23,18 @@ const form = reactive({ username: 'admin', password: 'admin123' })
 const loading = ref(false)
 
 async function handleLogin() {
+  if (!form.username || !form.password) {
+    ElMessage.warning('请输入用户名和密码')
+    return
+  }
   loading.value = true
-  try { await authStore.login(form.username, form.password); ElMessage.success('Login success'); router.push('/dashboard') }
-  catch { /* error handled by interceptor */ }
-  finally { loading.value = false }
+  try {
+    await authStore.login(form.username, form.password)
+    ElMessage.success('登录成功')
+  } catch {
+    ElMessage.error('登录失败，请检查用户名和密码')
+  } finally {
+    loading.value = false
+  }
 }
 </script>

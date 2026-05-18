@@ -47,6 +47,9 @@ public class TokenController {
                 .build();
     }
 
+    @org.springframework.beans.factory.annotation.Autowired
+    private com.blp.auth.mapper.UserMapper userMapper;
+
     @Operation(summary = "登录获取Token")
     @PostMapping("/login")
     public ApiResult<Map<String, Object>> login(@RequestBody LoginRequest request) throws Exception {
@@ -69,12 +72,16 @@ public class TokenController {
         String[] authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority).toArray(String[]::new);
 
+        com.blp.auth.model.SecurityUser su = userMapper.selectByUsername(authentication.getName());
+        Long userId = su != null ? su.getId() : 1L;
+
         JWTClaimsSet claims = new JWTClaimsSet.Builder()
                 .subject(authentication.getName())
                 .issuer("blp-auth")
                 .issueTime(Date.from(now))
                 .expirationTime(Date.from(now.plusSeconds(expiresInSeconds)))
                 .jwtID(UUID.randomUUID().toString())
+                .claim("userId", userId)
                 .claim("authorities", authorities)
                 .build();
 

@@ -16,16 +16,43 @@ spring:
       routes:
         - id: auth-svc
           uri: lb://blp-auth
-          predicates:
-            - Path=/auth/**
+          predicates: [Path=/auth/**]
         - id: user-svc
           uri: lb://blp-user
-          predicates:
-            - Path=/user/**
+          predicates: [Path=/user/**]
         - id: product-svc
           uri: lb://blp-product
-          predicates:
-            - Path=/product/**
+          predicates: [Path=/product/**]
+        - id: cart-svc
+          uri: lb://blp-cart
+          predicates: [Path=/cart/**]
+        - id: order-svc
+          uri: lb://blp-order
+          predicates: [Path=/order/**]
+        - id: payment-svc
+          uri: lb://blp-payment
+          predicates: [Path=/payment/**]
+        - id: inventory-svc
+          uri: lb://blp-inventory
+          predicates: [Path=/inventory/**]
+        - id: file-svc
+          uri: lb://blp-file
+          predicates: [Path=/file/**]
+        - id: promotion-svc
+          uri: lb://blp-promotion
+          predicates: [Path=/promotion/**]
+        - id: review-svc
+          uri: lb://blp-review
+          predicates: [Path=/review/**]
+        - id: search-svc
+          uri: lb://blp-search
+          predicates: [Path=/search/**]
+        - id: log-svc
+          uri: lb://blp-log
+          predicates: [Path=/log/**]
+        - id: dashboard-svc
+          uri: lb://blp-dashboard
+          predicates: [Path=/dashboard/**]
 
 logging:
   level:

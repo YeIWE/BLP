@@ -1,5 +1,5 @@
 export default {
-  common: { search: 'Suchen', create: 'Neu', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', confirm: 'Bestätigen', actions: 'Aktionen', status: 'Status', enabled: 'Aktiv', disabled: 'Inaktiv', yes: 'Ja', no: 'Nein' },
+  common: { search: 'Suchen', create: 'Neu', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', confirm: 'Bestätigen', actions: 'Aktionen', status: 'Status', enabled: 'Aktiv', disabled: 'Inaktiv', yes: 'Ja', no: 'Nein', success: 'Erfolg', failed: 'Fehler', view: 'Ansehen' },
   login: { title: 'BLP E-Commerce Verwaltung', username: 'Benutzername', password: 'Passwort', btn: 'Anmelden', success: 'Anmeldung erfolgreich', error: 'Benutzername oder Passwort falsch' },
   menu: { home: 'Start', sys: 'System', user: 'Benutzer', role: 'Rollen', menuMgr: 'Menüs', product: 'Produkte', productList: 'Produkte', category: 'Kategorien', brand: 'Marken' },
   user: { username: 'Benutzername', nickname: 'Spitzname', email: 'E-Mail', phone: 'Telefon', createTime: 'Erstellt', password: 'Passwort' },

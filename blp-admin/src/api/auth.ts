@@ -5,5 +5,5 @@ export function login(username: string, password: string) {
 }
 
 export function getUserMenus() {
-  return request.get('/user/menu/user/1')
+  return request.get('/user/menu/current')
 }

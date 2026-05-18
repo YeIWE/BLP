@@ -84,7 +84,11 @@
       "Bash(node -e \"const b=require\\('bcryptjs'\\); console.log\\(b.hashSync\\('admin123', b.genSaltSync\\(10\\)\\)\\)\")",
       "Bash(sed -i 's|$2a$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW|$2b$10$7sQWO/2kcqhcgwkWmU7aLe1opboaTUmyGrw3LT6JM18jSNpsJOwZG|g' docs/sql/V1__init_rbac.sql)",
       "Bash(rm -f src/main/java/com/blp/auth/controller/HealthController.java)",
-      "Bash(rm -f /tmp/GenHash.java)"
+      "Bash(rm -f /tmp/GenHash.java)",
+      "Bash(sed -i \"s/yes: 'Yes', no: 'No' }/yes: 'Yes', no: 'No', success: 'Success', failed: 'Failed', view: 'View' }/\" en.ts)",
+      "Bash(sed -i \"s/yes: 'はい', no: 'いいえ' }/yes: 'はい', no: 'いいえ', success: '成功', failed: '失敗', view: '確認' }/\" ja-JP.ts)",
+      "Bash(sed -i \"s/yes: '예', no: '아니오' }/yes: '예', no: '아니오', success: '성공', failed: '실패', view: '보기' }/\" ko-KR.ts)",
+      "Bash(sed -i \"s/yes: 'Ja', no: 'Nein' }/yes: 'Ja', no: 'Nein', success: 'Erfolg', failed: 'Fehler', view: 'Ansehen' }/\" de-DE.ts)"
     ]
   }
 }

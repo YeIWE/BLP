@@ -1,5 +1,5 @@
 export default {
-  common: { search: '搜索', create: '新增', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', confirm: '确定', actions: '操作', status: '状态', enabled: '启用', disabled: '禁用', yes: '是', no: '否' },
+  common: { search: '搜索', create: '新增', edit: '编辑', delete: '删除', save: '保存', cancel: '取消', confirm: '确定', actions: '操作', status: '状态', enabled: '启用', disabled: '禁用', yes: '是', no: '否', success: '操作成功', failed: '操作失败', view: '查看' },
   login: { title: 'BLP 电商管理后台', username: '用户名', password: '密码', btn: '登 录', success: '登录成功', error: '用户名或密码错误' },
   menu: { home: '首页', sys: '系统管理', user: '用户管理', role: '角色管理', menuMgr: '菜单管理', product: '商品管理', productList: '商品列表', category: '分类管理', brand: '品牌管理' },
   user: { username: '用户名', nickname: '昵称', email: '邮箱', phone: '手机号', createTime: '创建时间', password: '密码' },

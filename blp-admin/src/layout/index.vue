@@ -37,7 +37,7 @@
             </template>
           </el-dropdown>
           <template v-for="t in themeStore.themes" :key="t.key">
-            <span :style="{display:'inline-block',width:20,height:20,borderRadius:'50%',background:`var(--primary)`,cursor:'pointer',border:themeStore.current===t.key?'3px solid #333':'3px solid transparent',margin:'0 2px'}" @click="themeStore.switchTheme(t.key)" :title="t.key"></span>
+            <span :style="{display:'inline-block',width:20,height:20,borderRadius:'50%',background:themeColors[t.key],cursor:'pointer',border:themeStore.current===t.key?'3px solid #333':'3px solid transparent',margin:'0 2px'}" @click="themeStore.switchTheme(t.key)" :title="t.key"></span>
           </template>
           <el-dropdown @command="handleCmd">
             <span style="cursor:pointer">Admin &#9660;</span>
@@ -68,6 +68,7 @@ const themeStore = useThemeStore()
 const isCollapse = ref(false)
 
 const menuList = authStore.menus as any[]
+const themeColors: Record<string, string> = { blue: '#1890FF', yellow: '#F5A623', pink: '#EB2F96', green: '#52C41A', purple: '#722ED1' }
 
 function switchLang(lang: string) { locale.value = lang; localStorage.setItem('lang', lang) }
 function handleCmd(cmd: string) { if (cmd === 'logout') authStore.logout() }

@@ -1,5 +1,5 @@
 export default {
-  common: { search: '検索', create: '新規', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', confirm: '確認', actions: '操作', status: '状態', enabled: '有効', disabled: '無効', yes: 'はい', no: 'いいえ' },
+  common: { search: '検索', create: '新規', edit: '編集', delete: '削除', save: '保存', cancel: 'キャンセル', confirm: '確認', actions: '操作', status: '状態', enabled: '有効', disabled: '無効', yes: 'はい', no: 'いいえ', success: '成功', failed: '失敗', view: '確認' },
   login: { title: 'BLP EC管理画面', username: 'ユーザー名', password: 'パスワード', btn: 'ログイン', success: 'ログイン成功', error: 'ユーザー名またはパスワードが間違っています' },
   menu: { home: 'ホーム', sys: 'システム管理', user: 'ユーザー管理', role: 'ロール管理', menuMgr: 'メニュー管理', product: '商品管理', productList: '商品一覧', category: 'カテゴリ管理', brand: 'ブランド管理' },
   user: { username: 'ユーザー名', nickname: 'ニックネーム', email: 'メール', phone: '電話番号', createTime: '作成日時', password: 'パスワード' },

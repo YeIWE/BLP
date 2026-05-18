@@ -28,4 +28,10 @@ public class SysMenuController {
     public ApiResult<List<SysMenu>> userMenus(@PathVariable Long userId) {
         return ApiResult.ok(sysMenuService.getUserMenus(userId));
     }
+
+    @Operation(summary = "当前用户菜单")
+    @GetMapping("/current")
+    public ApiResult<List<SysMenu>> currentUserMenus(@RequestHeader(value = "X-User-Id", defaultValue = "1") Long userId) {
+        return ApiResult.ok(sysMenuService.getUserMenus(userId));
+    }
 }

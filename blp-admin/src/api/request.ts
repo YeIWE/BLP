@@ -12,7 +12,7 @@ request.interceptors.request.use(config => {
 request.interceptors.response.use(
   res => res.data,
   err => {
-    const msg = err.response?.data?.message || err.response?.data?.error_description || 'Request failed'
+    const msg = err.response?.data?.message || err.response?.data?.error_description || err.message || '网络请求失败，请检查服务是否启动'
     ElMessage.error(msg)
     if (err.response?.status === 401) {
       localStorage.removeItem('token')
