@@ -1,45 +1,51 @@
 # BLP Middleware Configuration
-# Generated: 2026-05-18
+# Generated: 2026-05-18 | Updated: 2026-05-18
 # All containers running on Docker Desktop
 
+# === 数据库 ===
 mysql:
   container: mysql-server
   host: localhost
-  port: 3307          # host port mapped to container 3306
+  port: 3307          # 宿主机端口→容器3306
   username: root
   password: root
   database: blp_db
 
+# === 缓存 ===
 redis:
   container: redis-server
   host: localhost
   port: 6379
   password: redis      # --requirepass redis
 
+# === 注册中心 & 配置中心 ===
 nacos:
   container: nacos-server
   host: localhost
   port: 8848          # HTTP API
-  grpc-port: 9848     # gRPC (internal)
+  grpc-port: 9848     # gRPC
   console: http://localhost:8848/nacos
-  username: nacos
+  username: nacos     # 认证已启用, 需验证凭据
   password: nacos
+  note: "当前 auth 已启用但 nacos/nacos 登录被拒(403), 开发阶段在各服务中临时禁用了 Nacos 注册"
 
 sentinel:
   container: not-running
   host: localhost
   port: 8719
 
+# === 对象存储 ===
 minio:
   container: minio-server
   host: localhost
-  api-port: 9000      # S3 API (was configured as 9001 in code!)
+  api-port: 9000      # S3 API
   console-port: 9001  # Web Console
   console: http://localhost:9001
   access-key: minioadmin
   secret-key: minioadmin
   bucket: blp-product
 
+# === 消息队列 ===
 rabbitmq:
   container: rabbitmq-server
   host: localhost
@@ -55,6 +61,7 @@ kafka:
   port: 9092
   mode: KRaft (no ZooKeeper)
 
+# === 搜索引擎 ===
 elasticsearch:
   container: es-server
   host: localhost
@@ -63,16 +70,40 @@ elasticsearch:
   security: disabled (dev mode)
   heap: 512MB
 
+# === 文档数据库 ===
 mongodb:
   container: mongo-server
   host: localhost
   port: 27017
 
+# === 反向代理 ===
 nginx:
   container: nginx-server
   host: localhost
-  port: 8080          # host port mapped to container 80
+  port: 8080          # 宿主机端口→容器80
 
+# === 微服务 (非Docker, Java进程) ===
 gateway:
   host: localhost
-  port: 9000          # Spring Cloud Gateway (not in Docker)
+  port: 18000         # Spring Cloud Gateway (与MinIO端口冲突,已改为18000)
+
+auth-svc:
+  host: localhost
+  port: 18080         # 认证服务 (原9001,与MinIO Console冲突,已改为18080)
+
+user-svc:
+  host: localhost
+  port: 9002
+
+product-svc:
+  host: localhost
+  port: 9003
+
+# === 前端 ===
+blp-admin:
+  host: localhost
+  port: 9528          # Vite dev server
+
+blp-web:
+  host: localhost
+  port: 9527          # Vite dev server
