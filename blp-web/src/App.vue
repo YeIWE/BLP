@@ -5,6 +5,9 @@
         <router-link to="/" style="color:#fff;text-decoration:none;font-size:20px;font-weight:bold">BLP Mall</router-link>
         <router-link to="/" style="color:#fff;text-decoration:none">{{ $t('web.home') }}</router-link>
         <router-link to="/product" style="color:#fff;text-decoration:none">{{ $t('web.search') }}</router-link>
+        <router-link to="/cart" style="color:#fff;text-decoration:none">{{ $t('cart.title') }}</router-link>
+        <router-link to="/orders" style="color:#fff;text-decoration:none">{{ $t('orders.title') }}</router-link>
+        <router-link to="/seckill" style="color:#fff;text-decoration:none">{{ $t('seckill.title') }}</router-link>
       </div>
       <div style="display:flex;align-items:center;gap:12px">
         <el-dropdown @command="switchLang">

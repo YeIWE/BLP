@@ -17,4 +17,10 @@ export default {
     detail: '商品详情', stock: '库存', addToCart: '加入购物车', unit: '件',
     all: '全部',
   },
+  cart: { title: '购物车', empty: '购物车是空的', selectAll: '全选', total: '合计', checkout: '去结算', remove: '删除' },
+  checkout: { title: '确认订单', receiver: '收货人', phone: '联系电话', address: '收货地址', submit: '提交订单', success: '下单成功' },
+  payment: { title: '支付', orderNo: '订单号', amount: '支付金额', method: '支付方式', alipay: '支付宝', wechat: '微信支付', pay: '立即支付', success: '支付成功', failed: '支付失败', retry: '重新支付', viewOrders: '查看订单' },
+  orders: { title: '我的订单' },
+  seckill: { title: '秒杀专区', buy: '立即抢购', notStarted: '即将开始', ended: '已结束', soldOut: '已抢光', success: '抢购成功' },
+  review: { title: '商品评价', rating: '评分', noReviews: '暂无评价' },
 }
