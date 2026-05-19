@@ -41,7 +41,7 @@ minio:
   api-port: 9000      # S3 API
   console-port: 9001  # Web Console
   console: http://localhost:9001
-  access-key: minioadmin
+  access-key: minio
   secret-key: minioadmin
   bucket: blp-product
 

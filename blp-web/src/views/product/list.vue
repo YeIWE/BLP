@@ -32,6 +32,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { getProductPage, getCategoryTree } from '@/api/product'
+import { searchProducts } from '@/api/search'
 
 const route = useRoute()
 const products = ref<any[]>([])
@@ -43,8 +44,13 @@ const categoryId = ref(route.query.categoryId?Number(route.query.categoryId):und
 
 async function fetch() {
   try {
-    const res:any = await getProductPage({ page: page.value, size: 12, keyword: keyword.value, categoryId: categoryId.value })
-    products.value = res.data?.records||[]; total.value = res.data?.total||0
+    if (keyword.value) {
+      const res:any = await searchProducts({ keyword: keyword.value, page: page.value, size: 12 })
+      products.value = res.data?.records||[]; total.value = res.data?.total||0
+    } else {
+      const res:any = await getProductPage({ page: page.value, size: 12, keyword: keyword.value, categoryId: categoryId.value })
+      products.value = res.data?.records||[]; total.value = res.data?.total||0
+    }
   } catch {}
 }
 
