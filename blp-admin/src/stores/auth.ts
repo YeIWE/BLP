@@ -47,14 +47,18 @@ export const useAuthStore = defineStore('auth', () => {
     const res: any = await apiLogin(username, password)
     token.value = res.data.access_token
     localStorage.setItem('token', res.data.access_token)
-    router.push('/dashboard')
     await loadMenus()
+    router.push('/dashboard')
   }
 
   async function loadMenus() {
     try {
       const res: any = await getUserMenus()
-      menus.value = res.data || []
+      if (res?.data && Array.isArray(res.data) && res.data.length > 0) {
+        menus.value = res.data
+      } else {
+        menus.value = defaultMenus
+      }
     } catch {
       menus.value = defaultMenus
     }

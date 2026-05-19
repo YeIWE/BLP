@@ -7,7 +7,7 @@
       </div>
       <el-menu :default-active="route.path" :collapse="isCollapse" background-color="transparent" text-color="var(--sidebar-text)" active-text-color="#fff" @select="handleMenuSelect">
         <template v-for="item in menuList" :key="item.id">
-          <el-sub-menu v-if="item.type===0&&item.children?.length" :index="item.path||String(item.id)">
+          <el-sub-menu v-if="item.type===0&&item.children&&item.children.length" :index="item.path||String(item.id)">
             <template #title><el-icon><component :is="item.icon" /></el-icon><span>{{ item.name }}</span></template>
             <el-menu-item v-for="child in item.children.filter((c:any)=>c.type===1)" :key="child.id" :index="child.path">{{ child.name }}</el-menu-item>
           </el-sub-menu>
