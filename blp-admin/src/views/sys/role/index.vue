@@ -12,9 +12,9 @@
         <el-table-column prop="description" :label="$t('role.description')" />
         <el-table-column :label="$t('common.actions')" width="180">
           <template #default="{row}">
-            <el-button type="primary" size="small" @click="openDialog(row)">{{ $t('common.edit') }}</el-button>
-            <el-button type="success" size="small" @click="openMenuDialog(row)">菜单</el-button>
-            <el-button type="danger" size="small" @click="handleDelete(row.id)">{{ $t('common.delete') }}</el-button>
+            <el-button type="primary" size="small" @click="openDialog(row)" style="margin:2px">{{ $t('common.edit') }}</el-button>
+            <el-button type="success" size="small" @click="openMenuDialog(row)" style="margin:2px">菜单</el-button>
+            <el-button type="danger" size="small" @click="handleDelete(row.id)" style="margin:2px">{{ $t('common.delete') }}</el-button>
           </template>
         </el-table-column>
       </el-table>

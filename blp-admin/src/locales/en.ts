@@ -1,7 +1,7 @@
 export default {
   common: { search: 'Search', create: 'Create', edit: 'Edit', delete: 'Delete', save: 'Save', cancel: 'Cancel', confirm: 'Confirm', actions: 'Actions', status: 'Status', enabled: 'Enabled', disabled: 'Disabled', yes: 'Yes', no: 'No', success: 'Success', failed: 'Failed', view: 'View' },
   login: { title: 'BLP E-Commerce Admin', username: 'Username', password: 'Password', btn: 'Login', success: 'Login successful', error: 'Invalid username or password' },
-  menu: { home: 'Home', sys: 'System', user: 'Users', role: 'Roles', menuMgr: 'Menus', product: 'Products', productList: 'Products', category: 'Categories', brand: 'Brands' },
+  menu: { home: 'Home', sys: 'System', user: 'Users', role: 'Roles', menuMgr: 'Menus', product: 'Products', productList: 'Products', category: 'Categories', brand: 'Brands', orders: 'Orders', seckill: 'Flash Sale' },
   user: { username: 'Username', nickname: 'Nickname', email: 'Email', phone: 'Phone', createTime: 'Created', password: 'Password' },
   role: { name: 'Name', code: 'Code', description: 'Description' },
   menuMgr: { name: 'Name', path: 'Path', component: 'Component', icon: 'Icon', type: 'Type', permission: 'Permission', sort: 'Sort', dir: 'Directory', menu: 'Menu', button: 'Button' },

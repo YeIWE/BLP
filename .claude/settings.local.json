@@ -100,7 +100,10 @@
       "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: '検索', cart: 'カート', orders: '注文', seckill: 'タイムセール', lang: '言語', login: 'ログイン', logout: 'ログアウト', home: 'ホーム' },/\" ja-JP.ts)",
       "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: '검색', cart: '장바구니', orders: '주문', seckill: '타임딜', lang: '언어', login: '로그인', logout: '로그아웃', home: '홈' },/\" ko-KR.ts)",
       "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: 'Suche', cart: 'Warenkorb', orders: 'Bestellungen', seckill: 'Angebote', lang: 'Sprache', login: 'Anmelden', logout: 'Abmelden', home: 'Start' },/\" de-DE.ts)",
-      "Bash(python -c \"import sys,json;d=json.load\\(sys.stdin\\);print\\('Menus:',len\\(d['data']\\),'| checked:',[m['checked'] for m in d['data']]\\)\")"
+      "Bash(python -c \"import sys,json;d=json.load\\(sys.stdin\\);print\\('Menus:',len\\(d['data']\\),'| checked:',[m['checked'] for m in d['data']]\\)\")",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(taskkill //F //PID 33148 //PID 31432 //PID 23264 //PID 7836 //PID 8540)",
+      "Bash(wmic process *)"
     ]
   }
 }

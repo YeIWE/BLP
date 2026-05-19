@@ -82,16 +82,19 @@ const themeColors: Record<string, string> = { blue: '#1890FF', yellow: '#F5A623'
 const menuPathI18n: Record<string, string> = {
   '/sys': 'menu.sys', '/sys/user': 'menu.user', '/sys/role': 'menu.role', '/sys/menu': 'menu.menuMgr',
   '/pms': 'menu.product', '/pms/product': 'menu.productList', '/pms/category': 'menu.category', '/pms/brand': 'menu.brand',
-  '/oms': 'order.title', '/oms/order': 'order.title', '/prom': 'seckill.title', '/prom/seckill': 'seckill.title',
+  '/oms': 'menu.orders', '/oms/order': 'menu.orders', '/prom': 'menu.seckill', '/prom/seckill': 'menu.seckill',
 }
 const { t } = useI18n()
+let menuClickLock = false
+function handleMenuSelect(index: string) {
+  if (menuClickLock || !index || !index.startsWith('/')) return
+  menuClickLock = true
+  router.push(index)
+  setTimeout(() => { menuClickLock = false }, 300)
+}
 function menuLabel(item: any) {
   const key = menuPathI18n[item.path]
   return key ? t(key) : item.name
-}
-
-function handleMenuSelect(index: string) {
-  if (index && index.startsWith('/')) router.push(index)
 }
 
 function switchLang(lang: string) {
