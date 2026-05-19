@@ -75,6 +75,10 @@ function handleMenuSelect(index: string) {
   if (index && index.startsWith('/')) router.push(index)
 }
 
-function switchLang(lang: string) { locale.value = lang; localStorage.setItem('lang', lang) }
+function switchLang(lang: string) {
+  locale.value = lang
+  localStorage.setItem('lang', lang)
+  ;(window as any).__switchElLocale?.(lang)
+}
 function handleCmd(cmd: string) { if (cmd === 'logout') authStore.logout() }
 </script>

@@ -1,4 +1,5 @@
 <template>
+  <el-config-provider :locale="currentElLocale">
   <div>
     <header style="background:var(--primary);color:#fff;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px">
       <div style="display:flex;align-items:center;gap:24px;font-size:16px">
@@ -36,13 +37,23 @@
       BLP Mall &copy; 2026 - Vue 3 + Element Plus
     </footer>
   </div>
+  </el-config-provider>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useThemeStore } from '@/stores/theme'
 import { useAuthStore } from '@/stores/auth'
 import { onMounted } from 'vue'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import en from 'element-plus/es/locale/lang/en'
+import ja from 'element-plus/es/locale/lang/ja'
+import ko from 'element-plus/es/locale/lang/ko'
+import de from 'element-plus/es/locale/lang/de'
+
+const elLocales: Record<string, any> = { 'zh-CN': zhCn, en, 'ja-JP': ja, 'ko-KR': ko, 'de-DE': de }
+const currentElLocale = ref(elLocales[localStorage.getItem('lang') || 'zh-CN'] || zhCn)
 
 const { locale } = useI18n()
 const themeStore = useThemeStore()
@@ -51,5 +62,9 @@ const themeColors: Record<string, string> = { blue: '#1890FF', yellow: '#F5A623'
 
 onMounted(() => themeStore.initTheme())
 
-function switchLang(lang: string) { locale.value = lang; localStorage.setItem('lang', lang) }
+function switchLang(lang: string) {
+  locale.value = lang
+  localStorage.setItem('lang', lang)
+  currentElLocale.value = elLocales[lang] || zhCn
+}
 </script>
