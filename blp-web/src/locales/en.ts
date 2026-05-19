@@ -9,6 +9,7 @@ export default {
   category: { name: 'Name', parentId: 'Parent', level: 'Level', icon: 'Icon', root: 'Root' },
   brand: { name: 'Name', logo: 'Logo', description: 'Description', uploadLogo: 'Upload Logo' },
   theme: { blue: 'Blue', yellow: 'Yellow', pink: 'Pink', green: 'Green', purple: 'Purple', title: 'Theme' },
+  nav: { search: 'Search', cart: 'Cart', orders: 'Orders', seckill: 'Flash Sale', lang: 'Lang', login: 'Login', logout: 'Logout', home: 'Home' },
   navbar: { logout: 'Logout', lang: 'Language', theme: 'Theme', profile: 'Profile' },
   dashboard: { title: 'Dashboard', welcome: 'Welcome to BLP Admin', stats: 'Statistics', users: 'Total Users', products: 'Total Products', orders: 'Total Orders' },
   web: {

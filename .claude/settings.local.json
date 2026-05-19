@@ -93,7 +93,13 @@
       "Bash(/c/Users/Administrator/.claude/skills/gstack/browse/dist/browse goto *)",
       "Bash(/c/Users/Administrator/.claude/skills/gstack/browse/dist/browse click *)",
       "Bash(/c/Users/Administrator/.claude/skills/gstack/browse/dist/browse url *)",
-      "Bash(/c/Users/Administrator/.claude/skills/gstack/browse/dist/browse text *)"
+      "Bash(/c/Users/Administrator/.claude/skills/gstack/browse/dist/browse text *)",
+      "Bash(sed -i \"s/navbar: { logout:/nav: { search: 'Search', cart: 'Cart', orders: 'Orders', seckill: 'Flash Sale', lang: 'Lang', login: 'Login', logout: 'Logout', home: 'Home' },\\\\n  navbar: { logout:/\" en.ts)",
+      "Bash(python -c ' *)",
+      "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: 'Search', cart: 'Cart', orders: 'Orders', seckill: 'Deals', lang: 'Lang', login: 'Login', logout: 'Logout', home: 'Home' },/\" en.ts)",
+      "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: '検索', cart: 'カート', orders: '注文', seckill: 'タイムセール', lang: '言語', login: 'ログイン', logout: 'ログアウト', home: 'ホーム' },/\" ja-JP.ts)",
+      "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: '검색', cart: '장바구니', orders: '주문', seckill: '타임딜', lang: '언어', login: '로그인', logout: '로그아웃', home: '홈' },/\" ko-KR.ts)",
+      "Bash(sed -i \"s/export default {/export default {\\\\n  nav: { search: 'Suche', cart: 'Warenkorb', orders: 'Bestellungen', seckill: 'Angebote', lang: 'Sprache', login: 'Anmelden', logout: 'Abmelden', home: 'Start' },/\" de-DE.ts)"
     ]
   }
 }

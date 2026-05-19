@@ -1,4 +1,5 @@
 export default {
+  nav: { search: 'Suche', cart: 'Warenkorb', orders: 'Bestellungen', seckill: 'Angebote', lang: 'Sprache', login: 'Anmelden', logout: 'Abmelden', home: 'Start' },
   common: { search: 'Suchen', create: 'Neu', edit: 'Bearbeiten', delete: 'Löschen', save: 'Speichern', cancel: 'Abbrechen', confirm: 'Bestätigen', actions: 'Aktionen', status: 'Status', enabled: 'Aktiv', disabled: 'Inaktiv', yes: 'Ja', no: 'Nein' },
   login: { title: 'BLP E-Commerce Verwaltung', username: 'Benutzername', password: 'Passwort', btn: 'Anmelden', success: 'Anmeldung erfolgreich', error: 'Benutzername oder Passwort falsch' },
   menu: { home: 'Start', sys: 'System', user: 'Benutzer', role: 'Rollen', menuMgr: 'Menüs', product: 'Produkte', productList: 'Produkte', category: 'Kategorien', brand: 'Marken' },

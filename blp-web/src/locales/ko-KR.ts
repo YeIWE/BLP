@@ -1,4 +1,5 @@
 export default {
+  nav: { search: '검색', cart: '장바구니', orders: '주문', seckill: '타임딜', lang: '언어', login: '로그인', logout: '로그아웃', home: '홈' },
   common: { search: '검색', create: '추가', edit: '편집', delete: '삭제', save: '저장', cancel: '취소', confirm: '확인', actions: '작업', status: '상태', enabled: '활성', disabled: '비활성', yes: '예', no: '아니오' },
   login: { title: 'BLP 전자상거래 관리자', username: '사용자 이름', password: '비밀번호', btn: '로그인', success: '로그인 성공', error: '사용자 이름 또는 비밀번호 오류' },
   menu: { home: '홈', sys: '시스템', user: '사용자', role: '역할', menuMgr: '메뉴', product: '상품', productList: '상품 목록', category: '카테고리', brand: '브랜드' },

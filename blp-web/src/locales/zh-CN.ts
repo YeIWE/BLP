@@ -11,6 +11,7 @@ export default {
   theme: { blue: '蓝白组', yellow: '黄白组', pink: '粉白组', green: '绿白组', purple: '紫白组', title: '主题切换' },
   navbar: { logout: '退出登录', lang: '语言', theme: '主题', profile: '个人中心' },
   dashboard: { title: '控制台', welcome: '欢迎使用 BLP 电商管理后台', stats: '数据统计', users: '用户总数', products: '商品总数', orders: '订单总数' },
+  nav: { search: '搜索', cart: '购物车', orders: '订单', seckill: '秒杀', lang: '语言', login: '登录', logout: '退出', home: '首页' },
   web: {
     home: '首页', search: '搜索商品', searchPlaceholder: '输入商品名称搜索...',
     categories: '商品分类', hotProducts: '热门推荐', price: '价格',

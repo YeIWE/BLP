@@ -41,7 +41,7 @@ const defaultMenus: MenuItem[] = [
 export const useAuthStore = defineStore('auth', () => {
   const token = ref(localStorage.getItem('token') || '')
   const userInfo = ref<any>(null)
-  const menus = ref<MenuItem[]>([])
+  const menus = ref<MenuItem[]>(defaultMenus)
 
   async function login(username: string, password: string) {
     const res: any = await apiLogin(username, password)

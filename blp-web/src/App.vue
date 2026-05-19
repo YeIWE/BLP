@@ -4,19 +4,19 @@
     <header style="background:var(--primary);color:#fff;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px">
       <div style="display:flex;align-items:center;gap:24px;font-size:16px">
         <router-link to="/" style="color:#fff;text-decoration:none;font-size:20px;font-weight:bold">BLP Mall</router-link>
-        <router-link to="/product" style="color:#fff;text-decoration:none">搜索</router-link>
-        <router-link to="/cart" style="color:#fff;text-decoration:none">购物车</router-link>
-        <router-link to="/orders" style="color:#fff;text-decoration:none">订单</router-link>
-        <router-link to="/seckill" style="color:#fff;text-decoration:none">秒杀</router-link>
+        <router-link to="/product" style="color:#fff;text-decoration:none">{{ $t('nav.search') }}</router-link>
+        <router-link to="/cart" style="color:#fff;text-decoration:none">{{ $t('nav.cart') }}</router-link>
+        <router-link to="/orders" style="color:#fff;text-decoration:none">{{ $t('nav.orders') }}</router-link>
+        <router-link to="/seckill" style="color:#fff;text-decoration:none">{{ $t('nav.seckill') }}</router-link>
       </div>
       <div style="display:flex;align-items:center;gap:12px">
         <template v-if="authStore.token">
           <span style="color:#fff">{{ authStore.userInfo?.username || '用户' }}</span>
-          <span style="color:#fff;cursor:pointer" @click="authStore.logout()">退出</span>
+          <span style="cursor:pointer;color:#fff" @click="authStore.logout()">{{ $t('nav.logout') }}</span>
         </template>
-        <router-link v-else to="/login" style="color:#fff;text-decoration:none">登录</router-link>
+        <router-link v-else to="/login" style="color:#fff;text-decoration:none">{{ $t('nav.login') }}</router-link>
         <el-dropdown @command="switchLang">
-          <span style="cursor:pointer;color:#fff">语言</span>
+          <span style="cursor:pointer;color:#fff">{{ $t('nav.lang') }}</span>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item command="zh-CN">中文</el-dropdown-item>
