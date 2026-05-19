@@ -29,7 +29,7 @@
       <template #footer><el-button @click="dialogVisible=false">{{ $t('common.cancel') }}</el-button><el-button type="primary" @click="handleSave">{{ $t('common.save') }}</el-button></template>
     </el-dialog>
     <!-- Menu Assignment Dialog -->
-    <el-dialog v-model="menuDialogVisible" title="菜单分配" width="500px">
+    <el-dialog v-model="menuDialogVisible" title="菜单分配" width="500px" @opened="onMenuDialogOpened">
       <el-tree ref="menuTreeRef" :data="menuTreeData" show-checkbox node-key="id" default-expand-all :props="{children:'children',label:'label'}" />
       <template #footer><el-button @click="menuDialogVisible=false">{{ $t('common.cancel') }}</el-button><el-button type="primary" @click="saveMenus">{{ $t('common.save') }}</el-button></template>
     </el-dialog>
@@ -63,6 +63,22 @@ async function openMenuDialog(row: any) {
   const res: any = await request.get(`/user/role/${row.id}/menus`)
   menuTreeData.value = res.data || []
   menuDialogVisible.value = true
+}
+
+function collectChecked(nodes: any[]): number[] {
+  let ids: number[] = []
+  for (const n of nodes) {
+    if (n.checked) ids.push(n.id)
+    if (n.children) ids = ids.concat(collectChecked(n.children))
+  }
+  return ids
+}
+
+function onMenuDialogOpened() {
+  setTimeout(() => {
+    const checked = collectChecked(menuTreeData.value)
+    if (menuTreeRef.value) menuTreeRef.value.setCheckedKeys(checked)
+  }, 100)
 }
 
 async function saveMenus() {
