@@ -18,7 +18,7 @@
     </section>
     <section class="section">
       <div class="section-header"><h2>热门推荐</h2><span class="section-more" @click="$router.push('/product')">更多 →</span></div>
-      <el-row :gutter="16"><el-col :span="6" v-for="p in products" :key="p.id"><el-card shadow="hover" class="product-card" @click="$router.push(\`/product/\${p.id}\`)"><div class="product-img"><img :src="p.mainImage||'https://placehold.co/300x200/f5f5f5/999?text=商品'" :alt="p.name" /><div class="product-tag" v-if="p.id%3===0">热卖</div></div><div class="product-info"><p class="product-name">{{ p.name }}</p><p class="product-price"><span class="price-symbol">¥</span>{{ p.price }}</p></div></el-card></el-col></el-row>
+      <el-row :gutter="16"><el-col :span="6" v-for="p in products" :key="p.id"><el-card shadow="hover" class="product-card" @click="$router.push('/product/'+p.id)"><div class="product-img"><img :src="p.mainImage||'https://placehold.co/300x200/f5f5f5/999?text=商品'" :alt="p.name" /><div class="product-tag" v-if="p.id%3===0">热卖</div></div><div class="product-info"><p class="product-name">{{ p.name }}</p><p class="product-price"><span class="price-symbol">¥</span>{{ p.price }}</p></div></el-card></el-col></el-row>
     </section>
     <footer class="home-footer"><div class="footer-grid"><div><h4>购物指南</h4><p>购物流程</p><p>支付方式</p></div><div><h4>售后服务</h4><p>退换货政策</p><p>客服中心</p></div><div><h4>关于我们</h4><p>公司介绍</p><p>联系我们</p></div><div><h4>客服</h4><p style="font-size:18px;color:var(--primary)">400-888-8888</p><p>工作日 9:00-18:00</p></div></div><div class="footer-bottom">BLP Mall &copy; 2026</div></footer>
   </div>
