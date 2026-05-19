@@ -8,8 +8,8 @@
       <el-menu :default-active="route.path" :collapse="isCollapse" background-color="transparent" text-color="var(--sidebar-text)" active-text-color="#fff" @select="handleMenuSelect">
         <template v-for="item in menuList" :key="item.id">
           <el-sub-menu v-if="item.type===0&&item.children&&item.children.length" :index="item.path||String(item.id)">
-            <template #title><el-icon><component :is="item.icon" /></el-icon><span>{{ item.name }}</span></template>
-            <el-menu-item v-for="child in item.children.filter((c:any)=>c.type===1)" :key="child.id" :index="child.path">{{ child.name }}</el-menu-item>
+            <template #title><el-icon><component :is="item.icon" /></el-icon><span>{{ menuLabel(item) }}</span></template>
+            <el-menu-item v-for="child in item.children.filter((c:any)=>c.type===1)" :key="child.id" :index="child.path">{{ menuLabel(child) }}</el-menu-item>
           </el-sub-menu>
           <el-menu-item v-else-if="item.type===1" :index="item.path">
             <el-icon><component :is="item.icon||'Menu'" /></el-icon><span>{{ item.name }}</span>
@@ -36,9 +36,17 @@
               </el-dropdown-menu>
             </template>
           </el-dropdown>
-          <template v-for="t in themeStore.themes" :key="t.key">
-            <span :style="{display:'inline-block',width:20,height:20,borderRadius:'50%',background:themeColors[t.key],cursor:'pointer',border:themeStore.current===t.key?'3px solid #333':'3px solid transparent',margin:'0 2px'}" @click="themeStore.switchTheme(t.key)" :title="t.key"></span>
-          </template>
+          <el-dropdown @command="themeStore.switchTheme">
+            <span style="cursor:pointer;color:var(--primary)">{{ $t('theme.title') }}</span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item v-for="t in themeStore.themes" :key="t.key" :command="t.key">
+                  <span :style="{display:'inline-block',width:14,height:14,borderRadius:'50%',background:themeColors[t.key],marginRight:8,verticalAlign:'middle'}"></span>
+                  {{ $t(t.label) }}
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
           <el-dropdown @command="handleCmd">
             <span style="cursor:pointer">Admin &#9660;</span>
             <template #dropdown>
@@ -70,6 +78,17 @@ const isCollapse = ref(false)
 
 const menuList = authStore.menus as any[]
 const themeColors: Record<string, string> = { blue: '#1890FF', yellow: '#F5A623', pink: '#EB2F96', green: '#52C41A', purple: '#722ED1' }
+
+const menuPathI18n: Record<string, string> = {
+  '/sys': 'menu.sys', '/sys/user': 'menu.user', '/sys/role': 'menu.role', '/sys/menu': 'menu.menuMgr',
+  '/pms': 'menu.product', '/pms/product': 'menu.productList', '/pms/category': 'menu.category', '/pms/brand': 'menu.brand',
+  '/oms': 'order.title', '/oms/order': 'order.title', '/prom': 'seckill.title', '/prom/seckill': 'seckill.title',
+}
+const { t } = useI18n()
+function menuLabel(item: any) {
+  const key = menuPathI18n[item.path]
+  return key ? t(key) : item.name
+}
 
 function handleMenuSelect(index: string) {
   if (index && index.startsWith('/')) router.push(index)
