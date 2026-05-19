@@ -37,6 +37,13 @@ public class PromSeckillController {
         return ApiResult.ok(PageResult.of(result.getTotal(), page, size, result.getRecords()));
     }
 
+    @Operation(summary = "删除秒杀活动")
+    @DeleteMapping("/{id}")
+    public ApiResult<Void> delete(@PathVariable Long id) {
+        seckillService.removeById(id);
+        return ApiResult.ok();
+    }
+
     @Operation(summary = "执行秒杀")
     @PostMapping("/{id}/buy")
     public ApiResult<Map<String, Object>> buy(
