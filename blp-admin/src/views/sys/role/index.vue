@@ -13,6 +13,7 @@
         <el-table-column :label="$t('common.actions')" width="180">
           <template #default="{row}">
             <el-button type="primary" size="small" @click="openDialog(row)">{{ $t('common.edit') }}</el-button>
+            <el-button type="success" size="small" @click="openMenuDialog(row)">菜单</el-button>
             <el-button type="danger" size="small" @click="handleDelete(row.id)">{{ $t('common.delete') }}</el-button>
           </template>
         </el-table-column>
@@ -27,6 +28,11 @@
       </el-form>
       <template #footer><el-button @click="dialogVisible=false">{{ $t('common.cancel') }}</el-button><el-button type="primary" @click="handleSave">{{ $t('common.save') }}</el-button></template>
     </el-dialog>
+    <!-- Menu Assignment Dialog -->
+    <el-dialog v-model="menuDialogVisible" title="菜单分配" width="500px">
+      <el-tree ref="menuTreeRef" :data="menuTreeData" show-checkbox node-key="id" default-expand-all :props="{children:'children',label:'label'}" />
+      <template #footer><el-button @click="menuDialogVisible=false">{{ $t('common.cancel') }}</el-button><el-button type="primary" @click="saveMenus">{{ $t('common.save') }}</el-button></template>
+    </el-dialog>
   </div>
 </template>
 
@@ -34,14 +40,16 @@
 import { ref, reactive } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { getRoleList, createRole, updateRole, deleteRole } from '@/api/user'
+import request from '@/api/request'
 
 const tableData = ref([])
 const loading = ref(false)
-const page = ref(1)
-const total = ref(0)
-const keyword = ref('')
-const dialogVisible = ref(false)
-const isEdit = ref(false)
+const menuTreeRef = ref<any>(null)
+const menuTreeData = ref<any[]>([])
+const menuDialogVisible = ref(false)
+const currentRoleId = ref(0)
+const page = ref(1); const total = ref(0); const keyword = ref('')
+const dialogVisible = ref(false); const isEdit = ref(false)
 const form = reactive<any>({})
 
 async function fetch() {
@@ -50,22 +58,37 @@ async function fetch() {
   finally { loading.value = false }
 }
 
+async function openMenuDialog(row: any) {
+  currentRoleId.value = row.id
+  const res: any = await request.get(`/user/role/${row.id}/menus`)
+  menuTreeData.value = res.data || []
+  menuDialogVisible.value = true
+}
+
+async function saveMenus() {
+  const checkedKeys = menuTreeRef.value?.getCheckedKeys() || []
+  await request.put(`/user/role/${currentRoleId.value}/menus`, { menuIds: checkedKeys })
+  ElMessage.success('菜单保存成功')
+  menuDialogVisible.value = false
+  fetch()
+}
+
 function openDialog(row?: any) {
   Object.keys(form).forEach(k => delete form[k])
-  if (row) { isEdit.value = true; Object.assign(form, row) }
-  else isEdit.value = false
+  if (row) { isEdit.value = true; Object.assign(form, row) } else isEdit.value = false
   dialogVisible.value = true
 }
 
 async function handleSave() {
-  if (isEdit.value) { await updateRole(form.id, form); ElMessage.success('Updated') }
-  else { await createRole(form); ElMessage.success('Created') }
-  dialogVisible.value = false; fetch()
+  try {
+    if (isEdit.value) { await updateRole(form.id, form) } else { await createRole(form) }
+    ElMessage.success('保存成功'); dialogVisible.value = false; fetch()
+  } catch { ElMessage.error('保存失败') }
 }
 
 async function handleDelete(id: number) {
-  await ElMessageBox.confirm('Confirm delete?', 'Warning', { type: 'warning' })
-  await deleteRole(id); ElMessage.success('Deleted'); fetch()
+  await ElMessageBox.confirm('确认删除？', '提示', { type: 'warning' })
+  await deleteRole(id); ElMessage.success('删除成功'); fetch()
 }
 
 fetch()

@@ -44,4 +44,17 @@ public class SysRoleController {
         sysRoleService.removeById(id);
         return ApiResult.ok();
     }
+
+    @Operation(summary = "获取角色菜单(含选中状态)")
+    @GetMapping("/{roleId}/menus")
+    public ApiResult<java.util.List<java.util.Map<String, Object>>> getRoleMenus(@PathVariable Long roleId) {
+        return ApiResult.ok(sysRoleService.getRoleMenuTree(roleId));
+    }
+
+    @Operation(summary = "保存角色菜单")
+    @PutMapping("/{roleId}/menus")
+    public ApiResult<Void> saveRoleMenus(@PathVariable Long roleId, @RequestBody java.util.Map<String, java.util.List<Long>> body) {
+        sysRoleService.saveRoleMenus(roleId, body.get("menuIds"));
+        return ApiResult.ok();
+    }
 }
